@@ -4,12 +4,12 @@ from .views import *
 
 
 router = routers.DefaultRouter()
-router.register(r"tasks_vs/router", TaskView)
+router.register(r"api/router/AllTasks", TaskView)
 
 urlpatterns = [
-    path("", include(router.urls)),
-    path("category/generics/<int:pk>/", CategoryView.as_view()),
-    path("category/generics/all/", CategoryAllView.as_view()),
-    path("category/view/delete/<int:pk>/", CategoryViewDelete.as_view()),
-    path("category/status/<str:pk>/", TaskStatus.as_view())
+    path("task/", include(router.urls)),
+    path("category/<int:pk>/", CategoryView.as_view()),
+    path("category/all/", CategoryAllView.as_view()),
+    path("category/delete/<int:pk>/", CategoryViewDelete.as_view()),
+    path("category/<str:status>/", TaskStatus.as_view())
 ]
