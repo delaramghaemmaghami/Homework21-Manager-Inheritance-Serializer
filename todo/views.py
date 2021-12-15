@@ -1,6 +1,5 @@
 from rest_framework import viewsets, generics, permissions
 from .serializer import *
-from rest_framework.viewsets import ViewSet
 from .models import *
 
 
@@ -16,7 +15,7 @@ class CategoryView(generics.RetrieveUpdateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
 
-class CategoryViewDelete(generics.RetrieveDestroyAPIView):
+class CategoryDeleteView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     permission_classes = [permissions.IsAdminUser]

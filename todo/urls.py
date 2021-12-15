@@ -10,6 +10,6 @@ urlpatterns = [
     path("task/", include(router.urls)),
     path("category/<int:pk>/", CategoryView.as_view()),
     path("category/all/", CategoryAllView.as_view()),
-    path("category/delete/<int:pk>/", CategoryViewDelete.as_view()),
+    path("category/delete/<int:pk>/", CategoryDeleteView.as_view()),
     path("category/<str:status>/", TaskStatus.as_view())
 ]
