@@ -16,7 +16,6 @@ class CategoryView(generics.RetrieveUpdateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
 
-
 class CategoryViewDelete(generics.RetrieveDestroyAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
